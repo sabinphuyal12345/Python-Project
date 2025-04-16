@@ -4,14 +4,14 @@ project = Tk()
 
 def handle():
     f = open("student_data/id.txt","w")
-    a = f.write("sabinphuyalnami@gmail.com")
+    a = f.write("studentdata")
     a = f.close()
 
 handle()
 
 def handle_ii():
     r = open("student_data/password.txt","w")
-    r.write("sabinpss")
+    r.write("student")
     r.close()
 
 handle_ii()
@@ -47,6 +47,10 @@ def new_window():
 
     btn_iii = Button(win,width="8",height="2",text="Grades",fg="black",bg="white",command=trigger_grades)
     btn_iii.pack(pady=10)
+    
+    add_member = Button(win,width="8", height="2", text="click to Add ", fg="black", bg="white",command=trigger_new)
+    add_member.pack(pady=10)
+
 
 def trigger_eca():
     eca = Toplevel()
@@ -76,6 +80,19 @@ def trigger_grades():
     head_ii.config(font=("cursive",10))
     head_ii.pack(pady=10)
 
+def trigger_new():
+    new = Toplevel()
+    form_new_name = Entry(new,width = 30)
+    form_new_name.pack(pady=20)
+
+    form_new_pass = Entry(new,width = 30)
+    form_new_pass.pack(pady=0)
+
+    new.title("Edit")
+    new.minsize(800,600)
+    new.maxsize(800,600)
+    new.configure(background="black")
+
 project.title("Student")
 project.minsize(800,600)
 project.maxsize(800,600)
@@ -104,17 +121,4 @@ btn.pack(pady=50)
 
 project.mainloop()
 
-import tkinter as tk
-from tkinter import messagebox
-
-def add_new_member():
-    messagebox.showinfo("Add member", "New member functionality triggered!")
-
-root = tk.Tk()
-root.title("Member Manager")
-
-add_button = tk.Button(root, text="Add New Member", command=add_new_member)
-add_button.pack(pady=20)
-
-root.mainloop()
 
