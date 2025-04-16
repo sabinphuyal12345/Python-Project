@@ -104,3 +104,17 @@ btn.pack(pady=50)
 
 project.mainloop()
 
+import tkinter as tk
+from tkinter import messagebox
+
+def add_new_member():
+    messagebox.showinfo("Add member", "New member functionality triggered!")
+
+root = tk.Tk()
+root.title("Member Manager")
+
+add_button = tk.Button(root, text="Add New Member", command=add_new_member)
+add_button.pack(pady=20)
+
+root.mainloop()
+
